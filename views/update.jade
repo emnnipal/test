@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-dark.is-bold
+    .hero-head
+      .container
+        nav.nav
+          .container
+            .nav-left
+              a.nav-item(href='/')
+                img(src='../images/bulma-white.png', alt='Description')
+            span.nav-toggle
+              span
+              span
+              span
+            .nav-right.nav-menu
+              a.nav-item(href='/')
+                | Home
+              a.nav-item(href='/departments')
+                | Departments
+              a.nav-item.is-active(href='/departments/addnew')
+                | Add Data
+    .hero-body
+      .container
+        .columns.is-vcentered
+          .column.is-4.is-offset-4
+            h1.title
+              | Edit Data
+            .box
+              form(method="POST", action="/departmentdata/#{update._id}/update")
+                label.label Department Name
+                p.control
+                  input.input(type="text", placeholder="Department Name", name="dep_name", value="#{update.dep_name}")
+                label.label Abbreviation
+                p.control
+                  input.input(type="text", placeholder="Abbreviation", name="abbrv", value="#{update.abbrv}")
+                label.label Secretary/Head
+                p.control
+                  input.input(type="text", placeholder="Secretary/Head", name="head", value="#{update.head}")
+                label.label Official Website
+                p.control
+                  input.input(type="url", placeholder="Official Website", name="website", value="#{update.website}")
+                label.label Contact Number
+                p.control
+                  input.input(type="value", placeholder="Contact Number", name="contact", value="#{update.contact}")
+                label.label Facebook
+                p.control
+                  input.input(type="text", placeholder="Facebook", name="fb", value="#{update.fb}")
+                label.label Twitter
+                p.control
+                  input.input(type="text", placeholder="Twitter", name="tw", value="#{update.tw}")
+                p.control
+                  button.is-dark(type="submit") Submit
+              p.has-text-centered
+                a(href='/departments') Department List
+  
+  include footer

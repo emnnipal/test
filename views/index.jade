@@ -1,0 +1,20 @@
+extends landing
+
+block content
+  section.hero.is-fullheight.is-dark.backgroundcus
+    .hero-body
+      .container.has-text-centered
+        .columns.is-vcentered
+          .column.is-5
+            figure.image.is-4by3
+              img.promo-img(src='https://i.ytimg.com/vi/wlcleOp5_pU/maxresdefault.jpg', alt='Description')
+          .column.is-6.is-offset-1
+            h1.title.is-2
+              | Government Departments
+            br
+            p.has-addons.has-text-centered
+              a.button.is-large.is-white.is-outlined(href='/departments')
+                | Departments
+              a.button.is-large.is-white.is-outlined(href='/departments/addnew')
+                | Add New
+    include footer

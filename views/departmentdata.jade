@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  section.hero.is-fullheight.is-default.is-dark
+    .hero-head
+        .container
+          nav.nav
+            .container
+              .nav-left
+                a.nav-item(href='/')
+                  img(src='../images/bulma-white.png', alt='Description')
+              span.nav-toggle
+                span
+                span
+                span
+              .nav-right.nav-menu
+                a.nav-item(href='/')
+                  | Home
+                a.nav-item(href='/departments')
+                  | Departments
+                a.nav-item(href='/departments/addnew')
+                  | Add Data
+    .hero-body
+      .container
+        .columns.is-vcentered
+          .column.is-5
+            figure.image.is-4by3
+              img(src='http://placehold.it/800x600', alt='Temporary')
+          .column.is-6.is-offset-1
+            h1.title
+              | Department Page
+            br
+            h2.subtitle
+              | Department Name: #{departmentdata.dep_name}
+            h2.subtitle
+              | Abbreviation: #{departmentdata.abbrv}
+            h2.subtitle
+              | Secretary/Head: #{departmentdata.head}
+            h2.subtitle
+              | Official Website: #{departmentdata.website}
+            h2.subtitle
+              | Contact Number: #{departmentdata.contact}
+            br
+            h1.title
+              | Social Pages
+            br
+            h2.subtitle
+              | Facebook: #{departmentdata.fb}
+            h2.subtitle
+              | Twitter: #{departmentdata.tw}
+            br
+            br
+            h2.subtitle
+              | Creation Date: #{departmentdata.createdate}
+            h2.subtitle
+              | Update Date: #{departmentdata.updatedate}
+            br
+    .hero-foot
+      nav.tabs.is-boxed.is-fullwidth
+        .container
+          ul
+            li
+              a(href='/departmentdata/'+departmentdata._id+'/update') Edit
+            li
+              a(href='/departmentdata/'+departmentdata._id+'/delete') Delete
+          
+  
+  include footer
+
+              

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  section.hero.is-medium.is-bold.is-dark
+    .hero-head
+        .container
+          nav.nav
+            .container
+              .nav-left
+                a.nav-item(href='/')
+                  img(src='../images/bulma-white.png', alt='Description')
+              span.nav-toggle
+                span
+                span
+                span
+              .nav-right.nav-menu
+                a.nav-item(href='/')
+                  | Home
+                a.nav-item.is-active(href='/departments')
+                  | Departments
+                a.nav-item(href='/departments/addnew')
+                  | Add Data
+    .hero-body
+      .container 
+        nav.panel
+          p.panel-heading
+            | Departments
+          .box
+            ul
+              for data in departments
+                li
+                  a.panel-block.is-active(href='/departmentdata/' + data._id ) #{data.dep_name}
+                    span.panel-icon
+                      i.fa.fa-book
+        
+  include footer
+

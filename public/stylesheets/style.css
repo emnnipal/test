@@ -1,0 +1,13 @@
+
+.is-background{
+  background-color: #fff7f9;
+  background-image: linear-gradient(rgba(181, 32, 0, 0.05),rgba(181, 32, 0, 0.05)),linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('https://adobochroniclesdotcom.files.wordpress.com/2015/05/image53.jpg');
+
+}
+
+.backgroundcus{
+	background-repeat: no-repeat !important;
+    background-position: top left !important;
+    background-attachment: fixed !important;
+}
+
